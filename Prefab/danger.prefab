@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5829254850767803565}
   - component: {fileID: 5728976143601915233}
   - component: {fileID: 8513154930510593253}
+  - component: {fileID: 7515260393353199988}
   m_Layer: 0
   m_Name: danger
   m_TagString: Untagged
@@ -143,3 +144,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50b5b3c62f051c419bd60df6c87580b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &7515260393353199988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6875963032310517329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed54f221967219e49aa4d1092b25f9d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: {fileID: 0}

@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     private void NewGame()
     {
         deaths = 0;
-        LoadLevel(2);
+        LoadLevel(1);
     }
 
     public void LoadLevel(int world)
@@ -49,10 +49,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene($"{world}"); // Load by index
     }
 
-    //public void Resetlvl(float delay)
-    //{
-    //    Invoke(nameof(Resetlvl), delay);
-    //}
+    public void Resetlvl(float delay)
+    {
+        Invoke(nameof(Resetlvl), delay);
+    }
 
     public void Resetlvl()
     {

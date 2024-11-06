@@ -11,6 +11,9 @@ public class Spikes : MonoBehaviour
     public float speed = 5f;
     public Vector2 direction = Vector2.up;
 
+    public AudioSource audioSource;
+    public AudioClip audioclip;
+
 
 
     private void Awake()
@@ -36,6 +39,9 @@ public class Spikes : MonoBehaviour
             }
 
             JumpyMovement jumpyMovement = collision.gameObject.GetComponent<JumpyMovement>();
+            audioSource.clip = audioclip;
+            audioSource.Play();
+
 
             if (GameManager.Instance != null)
             {
@@ -46,7 +52,8 @@ public class Spikes : MonoBehaviour
 
                 rigidbody.MovePosition(rigidbody.position + velocity * Time.fixedDeltaTime);
                 jumpyMovement.animator.SetBool("Death", true);
-                GameManager.Instance.Resetlvl();
+
+                GameManager.Instance.Resetlvl(0.1f);
             }
             else
             {

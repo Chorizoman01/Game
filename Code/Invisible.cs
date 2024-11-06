@@ -26,7 +26,7 @@ public class Invisible : MonoBehaviour
                 jumpyMovement.animator.SetBool("Death", true);
 
 
-                GameManager.Instance.Resetlvl();
+                GameManager.Instance.Resetlvl(0.1f);
             }
             else
             {

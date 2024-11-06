@@ -12,6 +12,9 @@ public class EnemyMove : MonoBehaviour
 
     public Animator animator;
 
+    public AudioSource audioSource;
+    public AudioClip audioclip;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -70,13 +73,14 @@ public class EnemyMove : MonoBehaviour
         {
             JumpyMovement jumpyMovement = collision.gameObject.GetComponent<JumpyMovement>();
 
-
+            audioSource.clip = audioclip;
+            audioSource.Play();
 
             if (GameManager.Instance != null)
             {
                 jumpyMovement.animator.SetBool("Death", true);
-                
-                GameManager.Instance.Resetlvl();
+
+                GameManager.Instance.Resetlvl(0.1f);
             }
             else
             {
