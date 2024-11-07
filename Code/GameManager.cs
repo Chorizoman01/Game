@@ -36,6 +36,15 @@ public class GameManager : MonoBehaviour
         NewGame();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("LevelSelect");
+        }
+    }
+
+
 
     private void NewGame()
     {

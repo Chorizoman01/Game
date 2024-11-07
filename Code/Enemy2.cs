@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMove : MonoBehaviour
+public class Enemy2 : MonoBehaviour
 {
+    //this was copied from enemymovement as both had similar code it was just to implement the Jumpy2 where at level 3 it loses controls
 
-    //making the rigid body and their speed
     private new Rigidbody2D rigidbody;
     private Vector2 velocity;
 
@@ -20,7 +20,7 @@ public class EnemyMove : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        //making the speed as random from 1 to 10 to be less repetitive
+        //enabled = false;
         speed = Random.Range(1, 10);
     }
 
@@ -51,7 +51,6 @@ public class EnemyMove : MonoBehaviour
     //    }
     //}
 
-    //move the enemy left and right and make it fall if it could
     private void FixedUpdate()
     {
         velocity.x = direction.x * speed;
@@ -70,12 +69,12 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-    //check collision against player if they touch restart the level and add fdeath
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            JumpyMovement jumpyMovement = collision.gameObject.GetComponent<JumpyMovement>();
+            //simply change the collitsion to this new code
+            NewJumpy jumpyMovement = collision.gameObject.GetComponent<NewJumpy>();
 
             audioSource.clip = audioclip;
             audioSource.Play();

@@ -10,7 +10,7 @@ public class Rotate : MonoBehaviour
     public bool Clockwise;
 
 
-    // Update is called once per frame
+    // This was used to anmate the circles so they roll
     void Update()
     {
         if(Clockwise == false)

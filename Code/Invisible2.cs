@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Invisible : MonoBehaviour
+public class Invisible2 : MonoBehaviour
 {
 
     public Color newColor;
 
     private SpriteRenderer rend;
 
-    //change the invisible block to visible and kill player if they touch it
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -18,7 +18,7 @@ public class Invisible : MonoBehaviour
             rend = GetComponent<SpriteRenderer>();
             rend.color = new Color(1, 1, 1, 1);
 
-            JumpyMovement jumpyMovement = collision.gameObject.GetComponent<JumpyMovement>();
+            NewJumpy jumpyMovement = collision.gameObject.GetComponent<NewJumpy>();
 
 
             if (GameManager.Instance != null)
@@ -26,7 +26,7 @@ public class Invisible : MonoBehaviour
                 jumpyMovement.animator.SetBool("Death", true);
 
 
-                GameManager.Instance.Resetlvl(0.1f);
+                GameManager.Instance.Resetlvl(0.3f);
             }
             else
             {

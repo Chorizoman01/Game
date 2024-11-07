@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spikes : MonoBehaviour
+public class Spikes2 : MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer; // Reference to the SpriteRenderer
 
     private Vector2 velocity;
-    public float speed = 5f;
+    public float speed = 2f;
     public Vector2 direction = Vector2.up;
 
     public AudioSource audioSource;
@@ -28,7 +28,6 @@ public class Spikes : MonoBehaviour
         }
     }
 
-    //same as enemy where if playe touches it then it resets leve and add deat
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -39,19 +38,19 @@ public class Spikes : MonoBehaviour
                 spriteRenderer.enabled = true;
             }
 
-            JumpyMovement jumpyMovement = collision.gameObject.GetComponent<JumpyMovement>();
+            NewJumpy jumpyMovement = collision.gameObject.GetComponent<NewJumpy>();
             audioSource.clip = audioclip;
             audioSource.Play();
 
 
             if (GameManager.Instance != null)
             {
-                
+
 
                 // Optional: Add movement or other actions upon collision
                 velocity.y = direction.y * speed;
 
-                rigidbody.MovePosition(rigidbody.position + velocity * Time.fixedDeltaTime);
+                rigidbody.MovePosition(rigidbody.position);
                 jumpyMovement.animator.SetBool("Death", true);
                 GameManager.Instance.Resetlvl(0.3f);
             }

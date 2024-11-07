@@ -4,11 +4,12 @@ using UnityEngine;
 public class EnemyReturn : MonoBehaviour
 {
     private Vector2 originalPosition; // Store the original position of the enemy
-    private Rigidbody2D rigidbody2D;
+    private new Rigidbody2D rigidbody2D;
 
     public float resetDelay = 3f; // Time in seconds before resetting the position (optional)
     public float fallThresholdY = -10f; // Y position threshold; adjust as needed
 
+    //will return the enemy to start pint after falling more than -10
     private void Awake()
     {
         // Store the enemy's starting position

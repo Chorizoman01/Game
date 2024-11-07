@@ -7,7 +7,7 @@ public static class Extensions
 
     private static LayerMask layerMask = LayerMask.GetMask("Default");
 
-
+    //use this for physicalm collisions
     public static bool Raycast( this Rigidbody2D rigidbody, Vector2 direction)
     {
         if (rigidbody.isKinematic)
